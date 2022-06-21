@@ -10,9 +10,9 @@ class GiftExchange {
     }
     // create new copy of the names list
     let tempNames = [... names];
-    let pairings = []
+    let pairings = [];
 
-    while (tempNames.length) > 0 {
+    while (tempNames.length > 0) {
 
       const firstIndex = getRandomIndex(tempNames.length);
       const firstName = tempNames.splice(firstIndex, 1);
@@ -20,11 +20,15 @@ class GiftExchange {
       const secondIndex = getRandomIndex(tempNames.length);
       const secondName = tempNames.splice(secondIndex, 1);
 
-      pairings.push([firstName, secondName])
+      pairings.push([firstName, secondName]);
     }
   
     return pairings
+  }
+
+  static traditional(names) {
+
+  }
 }
-  
 
 module.exports = GiftExchange
