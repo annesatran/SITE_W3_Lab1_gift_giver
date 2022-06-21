@@ -1,4 +1,4 @@
-
+const { BadRequestError } = require("../utils/errors")
 
 class GiftExchange {
 
@@ -31,7 +31,7 @@ class GiftExchange {
   static pairs(names) {
     // if there's an odd number of names, throw an error
     if (names.length % 2 == 1) {
-      throw new Error("The number of names cannot be odd");
+      throw new BadRequestError("The number of names cannot be odd");
     }
     // create new copy of the names list
     let tempNames = [... names];
