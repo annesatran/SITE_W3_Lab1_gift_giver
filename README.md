@@ -17,12 +17,12 @@ By the end of this lab you will be able to...
 
 #### Core feature:
 
-- [ ] Node/Express API written in JavaScript
-- [ ] Code to create the Express application and wire up the middleware should be written in the `app.js` file
-- [ ] Code to run the API located in the `server.js` file, where it sould import the Express application from the `app.js` code and then make sure it listens on port `3000`.
-- [ ] A `GiftExchange` model that implements two different gift-exchange algorithms.
-- [ ] An Express router living at the `/gift-exchange` endpoint to handle requests for the two different algorithms
-- [ ] Logging and error-handling middleware to enable more seamless interaction with the API
+- [X] Node/Express API written in JavaScript
+- [X] Code to create the Express application and wire up the middleware should be written in the `app.js` file
+- [X] Code to run the API located in the `server.js` file, where it sould import the Express application from the `app.js` code and then make sure it listens on port `3000`.
+- [X] A `GiftExchange` model that implements two different gift-exchange algorithms.
+- [X] An Express router living at the `/gift-exchange` endpoint to handle requests for the two different algorithms
+- [X] Logging and error-handling middleware to enable more seamless interaction with the API
 
 #### Stretch Feature:
 
@@ -37,8 +37,8 @@ By the end of this lab you will be able to...
 
 #### TDD Lab
 
-- [ ] Start by installing the core dependencies for this project with `npm install`.
-- [ ] Try running the tests in the terminal. They should all be failing, but that's ok. We'll use them to guide our development during this lab.
+- [X] Start by installing the core dependencies for this project with `npm install`.
+- [X] Try running the tests in the terminal. They should all be failing, but that's ok. We'll use them to guide our development during this lab.
 
 ```bash
 npm run test
@@ -52,8 +52,8 @@ npm run dev
 
 Running the tests along with the server requires having two terminal windows open:
 
-  - [ ] In one run the `npm run dev`
-  - [ ] In the other, run `npm run test:watch`
+  - [X] In one run the `npm run dev`
+  - [X] In the other, run `npm run test:watch`
 
 Then, every time a file is updated, the tests will be re-run. At the beginning, the `npm run dev` command will fail since we don't have a valid Express application to run. Let's fix that in the following steps!
 
@@ -79,68 +79,68 @@ The Express app and server will be split up in two different files - `app.js` an
 
 In the `app.js` file:
 
-- [ ] Wire up a server
-  - [ ] Start by using the `express` package to instantiate a simple server application
-  - [ ] Export the application from the `app.js` file as its default export
-- [ ] Test that the application works.
-  - [ ] Punch the `npm run dev` command into the terminal and if all goes well, the server should start up.
-- [ ] Add essential middleware
-  - [ ] Next, incorporate a logging middleware into the application with the `morgan` package and set its logging level to `tiny`.
-  - [ ] Afterwards, set up a request body parsing middleware with the `express.json` method.
-  - [ ] Consult the express [docs](https://expressjs.com/en/5x/api.html) if any of these parts seem confusing.
-- [ ] Define a "healthcheck" endpoint
-  - [ ] Create a single `GET` request handler at the `/` endpoint
-    - [ ] It should respond to all `GET` requests with a JSON object and a `200` status code
-    - [ ] The JSON response should contain a single key of `ping` that stores the string value: `pong`. As in: `{ "ping": "pong" }`.
+- [X] Wire up a server
+  - [X] Start by using the `express` package to instantiate a simple server application
+  - [X] Export the application from the `app.js` file as its default export
+- [X] Test that the application works.
+  - [X] Punch the `npm run dev` command into the terminal and if all goes well, the server should start up.
+- [X] Add essential middleware
+  - [X] Next, incorporate a logging middleware into the application with the `morgan` package and set its logging level to `tiny`.
+  - [X] Afterwards, set up a request body parsing middleware with the `express.json` method.
+  - [X] Consult the express [docs](https://expressjs.com/en/5x/api.html) if any of these parts seem confusing.
+- [X] Define a "healthcheck" endpoint
+  - [X] Create a single `GET` request handler at the `/` endpoint
+    - [X] It should respond to all `GET` requests with a JSON object and a `200` status code
+    - [X] The JSON response should contain a single key of `ping` that stores the string value: `pong`. As in: `{ "ping": "pong" }`.
 
 ### Step 2: Initialize the `/gift-exchange` router (15-20 mins)
 
-  - [ ] Setup files and folders
-    - [ ] Create a new directory in the root of the project called `routes`
-    - [ ] Inside that directory, create a new file called `gift-exchange.js`
+  - [X] Setup files and folders
+    - [X] Create a new directory in the root of the project called `routes`
+    - [X] Inside that directory, create a new file called `gift-exchange.js`
   - [ ] In the `gift-exchange.js` file:
-    - [ ] Create an Express router
-    - [ ] Make that router the default export for the file
+    - [X] Create an Express router
+    - [X] Make that router the default export for the file
     - [ ] Setup endpoint handlers
-      - [ ] Ensure the router has handlers that respond to `POST` requests at the `/pairs` and `/traditional` endpoints.
-      - [ ] Both endpoints should accept a JSON body in the `POST` request that contains a key for `names`.
-      - [ ] That key should store an array of users who will be entered in the gift exchange.
-      - [ ] For now, they can both handle each request with a simple JSON response and a `200` status code
+      - [X] Ensure the router has handlers that respond to `POST` requests at the `/pairs` and `/traditional` endpoints.
+      - [X] Both endpoints should accept a JSON body in the `POST` request that contains a key for `names`.
+      - [X] That key should store an array of users who will be entered in the gift exchange.
+      - [X] For now, they can both handle each request with a simple JSON response and a `200` status code
   - [ ] Back in the `app.js` file:
-    - [ ] Mount the router to the Express application at the `/gift-exchange` endpoint
-    - [ ] The application should now respond to `POST` requests at the `/gift-exchange/pairs` and `/gift-exchange/traditional` endpoints
-    - [ ] Restart the server if needed
+    - [X] Mount the router to the Express application at the `/gift-exchange` endpoint
+    - [X] The application should now respond to `POST` requests at the `/gift-exchange/pairs` and `/gift-exchange/traditional` endpoints
+    - [X] Restart the server if needed
 
 ### Step 3: The `GiftExchange` model (20-25 mins)
 
-  - [ ] Setup files and folders
-    - [ ] Create a new directory in the root of the project called `routes`
-    - [ ] Inside that directory, create a new file called `gift-exchange.js`
+  - [X] Setup files and folders
+    - [X] Create a new directory in the root of the project called `routes`
+    - [X] Inside that directory, create a new file called `gift-exchange.js`
   - [ ] In the `models/gift-exchange.js` file:
-    - [ ] Create a `GiftExchange` class
-      - [ ] Export the class from the file as its default export
-      - [ ] It should contain two static methods:
-        - [ ] The `pairs` method:
-          - [ ] Should accept a single argument - `names` - which is an array of strings.
+    - [X] Create a `GiftExchange` class
+      - [X] Export the class from the file as its default export
+      - [X] It should contain two static methods:
+        - [X] The `pairs` method:
+          - [X] Should accept a single argument - `names` - which is an array of strings.
             - Example: `["me", "you", "them", "us", "her", "him", "they", "y'all"]`
-          - [ ] If the number of names provided is odd, it should throw a new `Error` explaining that the number of names can't be odd.
-          - [ ] Should implements an algorithm responsible for randomly **randomly** pairing names together
-              - [ ] Should use the `Math.random` method
-              - [ ] Should not have any names repeated
-              - [ ] Should not exclude any names
-          - [ ] Should return an array of tuples (array with only two items) that represent the random pairings
-        - [ ] The `traditional` method
-          - [ ] Should accept a single argument - `names` - which is an array of strings
+          - [X] If the number of names provided is odd, it should throw a new `Error` explaining that the number of names can't be odd.
+          - [X] Should implements an algorithm responsible for randomly **randomly** pairing names together
+              - [X] Should use the `Math.random` method
+              - [X] Should not have any names repeated
+              - [X] Should not exclude any names
+          - [X] Should return an array of tuples (array with only two items) that represent the random pairings
+        - [X] The `traditional` method
+          - [X] Should accept a single argument - `names` - which is an array of strings
             - Example `["me", "you", "them", "us", "her", "him", "they", "y'all"]`
-          - [ ] Should implement an algorithm to **randomly** match each name to another name in the list in sequential order:
-            - [ ] The result should be an array of strings indicating who is giving a gift to who.
-            - [ ] The format of each string should be: `"name1 is giving a gift to name2"`
-            - [ ] The recipient of each gift should be the next gift giver
-            - [ ] The last person to receive a gift should give a gift to the first person.
-            - [ ] No name should give a gift twice, and no name should receive a gift twice
-            - [ ] No names should be left out
-            - [ ] Should use the `Math.random` method
-          - [ ] Should return the array of properly formatted strings
+          - [X] Should implement an algorithm to **randomly** match each name to another name in the list in sequential order:
+            - [X] The result should be an array of strings indicating who is giving a gift to who.
+            - [X] The format of each string should be: `"name1 is giving a gift to name2"`
+            - [X] The recipient of each gift should be the next gift giver
+            - [X] The last person to receive a gift should give a gift to the first person.
+            - [X] No name should give a gift twice, and no name should receive a gift twice
+            - [X] No names should be left out
+            - [X] Should use the `Math.random` method
+          - [X] Should return the array of properly formatted strings
 
 
 #### GiftExchange model examples:
@@ -179,55 +179,55 @@ GiftExchange.traditional(names)
 
 ### Step 4: Error handling (20-25 mins)
 
-  - [ ] Setup files and folders
-    - [ ] Create a new directory in the root of the project called `utils`
-    - [ ] Inside that directory, create a new file called `errors.js`
-  - [ ] In the `utils/errors.js` file:
-    - [ ] Create a new error class that inherits from the base `Error` class:
-      - [ ] `ExpressError`:
-        - [ ] the `constructor` should accept two arguments - `message` and `status`
-        - [ ] it should then set a `message` property on new instances of the class that explains what went wrong
-        - [ ] it should alos set a `status` property on new instances of the class that represent the status code of the error.
-    - [ ] Next, create two new error classes that inherit from the `ExpressError` class
-      - [ ] `BadRequestError`:
+  - [X] Setup files and folders
+    - [X] Create a new directory in the root of the project called `utils`
+    - [X] Inside that directory, create a new file called `errors.js`
+  - [X] In the `utils/errors.js` file:
+    - [X] Create a new error class that inherits from the base `Error` class:
+      - [X] `ExpressError`:
+        - [X] the `constructor` should accept two arguments - `message` and `status`
+        - [X] it should then set a `message` property on new instances of the class that explains what went wrong
+        - [X] it should alos set a `status` property on new instances of the class that represent the status code of the error.
+    - [X] Next, create two new error classes that inherit from the `ExpressError` class
+      - [X] `BadRequestError`:
         - [ ] should have a default `message` property set to `Bad request` that can be overriden in the constructor
-        - [ ] should have a `status` property that is set to `400`
-      - [ ] `NotFoundError`:
-        - [ ] should have a default `message` property set to `Not found` that can be overriden in the constructor
-        - [ ] should have a `status` property that is set to `404`
-    - [ ] Export all error classes from the file
-  - [ ] In the `models/gift-exchange.js` file:
-    - [ ] Replace all instances where a generic error is thrown with a `BadRequestError`
-  - [ ] In the `app.js` file:
-    - [ ] Create error handling middleware:
-      - [ ] Generic Error handler
-        - [ ] Define a middleware handler after all other middleware, routes, etc in the application
-        - [ ] Should be the **last** middleware in the application
-        - [ ] The handler should be a function that accepts four arguments - `error`, `req`, `res`, and `next`.
-        - [ ] It should extract the `status` and `message` properties from the `error` argument.
-          - [ ] If no valid `status` exists, it should default to `500`
-          - [ ] If no valid `message` exists, it should default to `Something wen't wrong in the application`
-        - [ ] It should always send back a JSON response:
-          - [ ] The status code should be set to whatever the `status` is.
-          - [ ] The JSON response should be an object:
-            - [ ] The object should contain one property - `error`
-            - [ ] The `error` property should contain an object with two properties - `status` and `message` - set to the `status` and `message` of the error.
-      - [ ] 404 Handler
-        - [ ] Define a middleware after all other valid endpoints that does nothing except call the `next` function with a new `NotFoundError`
-        - [ ] Should be the **second last** middleware in the application
+        - [X] should have a `status` property that is set to `400`
+      - [X] `NotFoundError`:
+        - [X] should have a default `message` property set to `Not found` that can be overriden in the constructor
+        - [X] should have a `status` property that is set to `404`
+    - [X] Export all error classes from the file
+  - [X] In the `models/gift-exchange.js` file:
+    - [X] Replace all instances where a generic error is thrown with a `BadRequestError`
+  - [X] In the `app.js` file:
+    - [X] Create error handling middleware:
+      - [X] Generic Error handler
+        - [X] Define a middleware handler after all other middleware, routes, etc in the application
+        - [X] Should be the **last** middleware in the application
+        - [X] The handler should be a function that accepts four arguments - `error`, `req`, `res`, and `next`.
+        - [X] It should extract the `status` and `message` properties from the `error` argument.
+          - [X] If no valid `status` exists, it should default to `500`
+          - [X] If no valid `message` exists, it should default to `Something wen't wrong in the application`
+        - [X] It should always send back a JSON response:
+          - [X] The status code should be set to whatever the `status` is.
+          - [X] The JSON response should be an object:
+            - [X] The object should contain one property - `error`
+            - [X] The `error` property should contain an object with two properties - `status` and `message` - set to the `status` and `message` of the error.
+      - [X] 404 Handler
+        - [X] Define a middleware after all other valid endpoints that does nothing except call the `next` function with a new `NotFoundError`
+        - [X] Should be the **second last** middleware in the application
 
 ### Step 5: Wire up the Model and routes
 
-  - [ ] In the `routes/git-exchange.js` file:
-    - [ ] Import the `GiftExchange` model
-    - [ ] For `POST` requests to either the `/gift-exchange/pairs` or `/gift-exchange/traditional` endpoints:
-      - [ ] Use the proper `try...catch...` syntax
-      - [ ] Check that a valid request body exists and that the `names` key is found in the request body
-      - [ ] If no valid request body exists, the endpoint should call `next` with a `BadRequestError`
-      - [ ] If the `names` key in the request body does not exist, or is not a valid array, the endpoint should call `next` with a `BadRequestError`
-      - [ ] Call the appropriate `GiftExchange` model with the proper arguments
-      - [ ] Send the results back to the user in a JSON response with a `200` status code when everything goes well
-      - [ ] Ensure the endpoints pass any caught errors to the `next` function
+  - [X] In the `routes/git-exchange.js` file:
+    - [X] Import the `GiftExchange` model
+    - [X] For `POST` requests to either the `/gift-exchange/pairs` or `/gift-exchange/traditional` endpoints:
+      - [X] Use the proper `try...catch...` syntax
+      - [X] Check that a valid request body exists and that the `names` key is found in the request body
+      - [X] If no valid request body exists, the endpoint should call `next` with a `BadRequestError`
+      - [X] If the `names` key in the request body does not exist, or is not a valid array, the endpoint should call `next` with a `BadRequestError`
+      - [X] Call the appropriate `GiftExchange` model with the proper arguments
+      - [X] Send the results back to the user in a JSON response with a `200` status code when everything goes well
+      - [X] Ensure the endpoints pass any caught errors to the `next` function
 
 ### Stretch Feature
 
@@ -235,13 +235,13 @@ The client thinks that they have a killer feature that would help them beat elfs
 
 #### The `/quiz` endpoint
 
-- [ ] There should be a new router mounted at the `/quiz` endpoint.
+- [] There should be a new router mounted at the `/quiz` endpoint.
 
-- [ ] The router should respond to `GET` and a `POST` requests at the `/` endpoint.
+- [] The router should respond to `GET` and a `POST` requests at the `/` endpoint.
 
-- [ ] There should be two new methods on the `GiftExchange` class - `quiz` and `quizResults`
+- [] There should be two new methods on the `GiftExchange` class - `quiz` and `quizResults`
 
-- [ ] All `GET` requests to the `/quiz` endpiont should call the `GiftGiver.quiz` method and return an array of `5` objects. Each object should have a key for `question` and a key for `answerChoices`. The `question` key should store a string that asks the user a question about their gift recipient. The `answerChoices` key should store an array of answer choices - `a`, `b`, `c`, and `d`.
+- [] All `GET` requests to the `/quiz` endpiont should call the `GiftGiver.quiz` method and return an array of `5` objects. Each object should have a key for `question` and a key for `answerChoices`. The `question` key should store a string that asks the user a question about their gift recipient. The `answerChoices` key should store an array of answer choices - `a`, `b`, `c`, and `d`.
 
 Example:
 
